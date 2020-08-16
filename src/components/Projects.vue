@@ -3,7 +3,7 @@
       <div class="about-projet">
         <h1 class="project-title"> Projets</h1>
         <br/>
-        <p class="myself-info">Vous trouverez plus bas quelques uns de mes projets. Les Technologies avec lesquelles je travaille sont VueJS, ASP.NET, NodeJS... </p>
+        <p class="myself-info">Vous trouverez plus bas quelques uns de mes projets. Les technologies avec lesquelles je travaille sont entre autres: VueJS, ASP.NET, Django, NodeJS.</p>
         <div class="project-list">
             <div class="project">
                 <img src="../assets/logo/Maintaining wellbeing made simple _ Nytialabs.png" alt="" class="project-img">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="curriculum">
-            <a href="https://firebasestorage.googleapis.com/v0/b/cryptowebsite-798af.appspot.com/o/cv%2FCV.pdf?alt=media&token=8c8daea5-2716-4f56-a281-a76f6f994d8a" target ="_blank" rel="noopener noreferrer">
+            <a href="https://firebasestorage.googleapis.com/v0/b/cryptowebsite-798af.appspot.com/o/cv%2FLatex_CV.pdf?alt=media&token=065d75f7-0031-4187-b9ce-b2374fe03758">
             <button class="cv">
                 CV
             </button>
@@ -116,4 +116,70 @@ a{
     background-color: skyblue;
 }
 
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 614px){
+    .projects{
+        margin: 0 12px 0 12px;
+    }
+    .myself-info{
+        
+        font-size: 18px;
+    }
+    .project-list{
+        flex-direction: column;
+    }
+    .project{
+        width: 350px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        padding-top: 10px;
+    }
+    .project-img{
+        width: 308px;
+        height: 350px;
+        display: flex;
+        align-self: center;
+    }
+    .description{
+        margin-bottom: 10px;
+    }
+    .cv{
+        width: 110px;
+        height: 45px;
+    }
+}
+/* @media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+      .project-list{
+          display: grid;
+          place-items: center;
+      }
+} */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1023px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .projects{
+          margin: 0 12px 0 12px;
+      }
+      .project-list{
+          display: flex;
+      }
+      .project{
+          width: 365px;
+      }
+      .project-img{
+          width: 356px;
+      }
+
+      .quote-container{
+          margin: -3px 12px 30px 12px;
+          /* margin-bottom: 30px; */
+      }
+}
 </style>

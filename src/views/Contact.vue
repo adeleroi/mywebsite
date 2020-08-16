@@ -21,24 +21,69 @@
           </ul>
         </div>
       </div>
-        <form action="" class="signup-form-data" @submit.prevent="connect">
+        <form action="post" class="signup-form-data" @submit.prevent="connect">
             <label for="" class="signup-title" >Nom*</label>
-            <input type="text" placeholder="Enter you name" v-model.lazy="name" class="signup-username signform">
-            <label for="" class="signup-title error" v-if="showNameError">Your name is invalid.</label>
-            <label for="" class="signup-title">What's your email?</label>
-            <input type="text" placeholder="Enter you email" v-model.lazy="email" class="signup-username signform" @blur="emailCheck" @focus="hideError">
-            <label for="" class="signup-title" >Compagnie</label>
-            <input type="text" placeholder="Enter a username" v-model.lazy="username" class="signup-username signform" @blur="emailCheck" @focus="hideError">
-            <button class="signup-submit-btn ">
-                <span class="signup-submit-btn-msg">SUBMIT</span>
-            </button>
+            <input type="text" required placeholder="Entrez votre nom" v-model.lazy="name" class="signup-username signform">
+            <label for="" class="signup-title">Email*</label>
+            <input type="text" required placeholder="Entrez votre email" v-model.lazy="email" class="signup-username signform">
+            <label for="" class="signup-title" >Compagnie*</label>
+            <input type="text" required placeholder="Entrez le nom de votre compagnie" v-model.lazy="compagnie" class="signup-username signform">
+            <label for="" class="signup-title" >Message*</label>
+            <textarea required class="contactmsg" v-model="msg"></textarea>
+            <div class="btn">
+              <button class="signup-submit-btn ">
+                  <span class="signup-submit-btn-msg">SUBMIT</span>
+              </button>
+            </div>
         </form>
   </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  data(){
+    return {
+      name: '',
+      email: '',
+      compagnie: '',
+      msg: '',
+      showError: false,
+      showSucess: false,
+      baseUrl: "formdata"
+    }
+  },
+  methods:{
+    connect(){
+      const promesse = fetch(this.baseUrl, {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: this.name,
+          email: this.email,
+          company: this.compagnie,
+          msg: this.msg
+        })
+      }).then(x => {
+          return x.json();
+      }).then(x=> {
+        if(x.status === 200){
+          this.showSucess = true;
+          this.name = '',
+          this.email = '',
+          this.msg = '',
+          this.compagnie = ''
+        }else{
+          this.showError = true;          
+        }
+      })
+      return promesse;
+
+    },
+
+  }
 }
 </script>
 <style>
@@ -75,6 +120,40 @@ export default {
  }
  .signup-form-data{
    display: grid;
-   place-items: center;
+ }
+ .signup-title{
+   width: 100%;
+   text-align: left;
+ }
+ .signup-username {
+   height: 40px;
+   margin-bottom: 10px;
+   margin-top: 5px;
+   width: 98%;
+   font-size: 20px;
+   padding-left: 10px;
+ }
+ .signup-submit-btn{
+    height: 50px;
+    width: 110px;
+    background-color: #292620;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+ }
+ .btn{
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+ }
+ .contactmsg{
+   height: 100px;
+   margin-bottom: 10px;
+   margin-top: 5px;
+   padding-left: 10px;
+   font-size: 16px;
  }
 </style>

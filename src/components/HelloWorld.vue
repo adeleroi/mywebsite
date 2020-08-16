@@ -6,9 +6,9 @@
       </div>
       <div class="title-name">
         <div class="presentation-name">
-          <span class="name">Ange-wilfried N'guessan</span>
+          <span class="hello-name">Ange-wilfried N'guessan</span>
           <span class="title">
-            Développeur web
+            développeur web et python
           </span>
         <div class="social">
           <ul class="socialmediaitems">
@@ -35,14 +35,14 @@
               la supériorité de l'intelligence collective, je suis convaincu de l'importance du travail
               d'équipe.
           </span>
-            <span class="question">
-              Intéressé à collaboré?
+            <!-- <span class="question">
+              Intéressé à collaborer?
               <router-link :to="{
                 name: 'Contact'
               }"> 
                 <span class="msg">Envoyez moi un message</span>
               </router-link>
-          </span>
+          </span> -->
     </div>
 
   </section>
@@ -82,7 +82,7 @@ export default {
   width: 300px;
   height: 300px;
 }
-.name{
+.hello-name{
   font-size: 40px;
 }
 .title{
@@ -130,4 +130,44 @@ export default {
     border-radius: 50%;
     margin-right: 10px;
  }
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 614px){
+    .hello{
+      margin: 0 12px 0 12px;
+    }
+    .presentation{
+      flex-direction: column;
+      /* font-size: 14px; */
+    }
+    .presentation-name{
+      text-align: center;
+    }
+    .hello-name, .title{
+      font-size: 24px;
+    }
+    .social{
+      display: grid;
+      place-items: center;
+    }
+    .socialmediaitems{
+      margin-bottom: 0;
+    }
+    .myself, .question{
+      font-size: 18px;
+    }
+
+    
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1023px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .hello{
+      margin: 0 12px 0 12px;
+    }
+    .hello-name, .title{
+      font-size: 30px;
+    }
+}
 </style>
