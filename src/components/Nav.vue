@@ -12,7 +12,7 @@
       <div class="navitems">
           <ul class="items">
             <li class="item resume">
-                <a href="https://firebasestorage.googleapis.com/v0/b/cryptowebsite-798af.appspot.com/o/cv%2FLatex_CV.pdf?alt=media&token=065d75f7-0031-4187-b9ce-b2374fe03758" 
+                <a href="https://firebasestorage.googleapis.com/v0/b/cryptowebsite-798af.appspot.com/o/cv%2FCV.pdf?alt=media&token=b00ba14f-f79d-46cc-933d-ed07bb186f0c" 
                 style="text-decoration: none; color: white" target ="_blank" rel="noopener noreferrer">
                   CV
                 </a>    
