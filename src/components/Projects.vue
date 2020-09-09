@@ -3,7 +3,7 @@
       <div class="about-projet">
         <h1 class="project-title"> Projets</h1>
         <br/>
-        <p class="myself-info">Vous trouverez plus bas quelques uns de mes projets. Les technologies avec lesquelles je travaille sont entre autres: VueJS, ASP.NET, Django, NodeJS.</p>
+        <p class="myself-info">Vous trouverez plus bas quelques uns de mes projets. Les technologies avec lesquelles je travaille sont entre autres: VueJS, ReactJS, ASP.NET, Django, NodeJS.</p>
         <div class="project-list">
             <div class="project">
                 <img src="../assets/logo/Maintaining wellbeing made simple _ Nytialabs.png" alt="" class="project-img">
